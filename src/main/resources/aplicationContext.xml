@@ -13,13 +13,19 @@
     </bean>
     <bean id="musicClassical"
           class="org.example.springhouse.ClassicalMusic">
+
     </bean>
     <bean id="musicRock"
           class="org.example.springhouse.RockMusic">
+
     </bean>
 
     <bean id="musicPlayer"
-          class="org.example.springhouse.MusicPlayer">
+          class="org.example.springhouse.MusicPlayer"
+          init-method="doMyinit"
+          destroy-method="doMyDestroy">
+
+
         <property name="MusicList">
             <list>
             <ref bean="musicClassical"/>

@@ -3,6 +3,13 @@ package org.example.springhouse;
 import java.util.*;
 
 public class MusicPlayer {
+    public void doMyinit(){
+        System.out.println("initialization");
+    }
+    public void doMyDestroy(){
+        System.out.println("Destruction");
+    }
+
     private List<Music> musicList = new ArrayList<>();
 
     public MusicPlayer(List<Music> musicList) {
@@ -26,4 +33,5 @@ public class MusicPlayer {
         }
 
     }
+
 }
