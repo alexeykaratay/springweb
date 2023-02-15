@@ -6,19 +6,11 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicRap"
-          class="org.example.springhouse.RapMusic">
-    </bean>
-    <bean id="musicClassical"
-          class="org.example.springhouse.ClassicalMusic">
+        <context:component-scan base-package="org.example.springhouse"/>
 
-    </bean>
-    <bean id="musicRock"
-          class="org.example.springhouse.RockMusic">
-
-    </bean>
+    <!-- <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
+    
 
     <bean id="musicPlayer"
           class="org.example.springhouse.MusicPlayer"
