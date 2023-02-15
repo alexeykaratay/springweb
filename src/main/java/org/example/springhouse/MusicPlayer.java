@@ -12,11 +12,15 @@ public class MusicPlayer {
 
     private List<Music> musicList = new ArrayList<>();
 
-    public MusicPlayer(List<Music> musicList) {
+    private MusicPlayer(List<Music> musicList) {
         this.musicList = musicList;
     }
 
-    public MusicPlayer(){
+    private MusicPlayer(){
+    }
+
+    public static  MusicPlayer getMusicPlayer(){
+        return new MusicPlayer();
     }
 
     public List<Music> getMusicList() {
