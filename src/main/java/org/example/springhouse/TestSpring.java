@@ -7,7 +7,9 @@ public class TestSpring {
                 "aplicationContext.xml");
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playSong();
+        musicPlayer.playSong(MusicEdge.RAP);
+        System.out.println("Volume: " + musicPlayer.getVolume());
+        System.out.println("Name: " + musicPlayer.getName());
 
 
         context.close();
