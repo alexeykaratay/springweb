@@ -2,6 +2,7 @@ package org.example.springhouse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -19,6 +20,14 @@ public class MusicPlayer {
     private ClassicalMusic classicalMusic;
     private RockMusic rockMusic;
     private RapMusic rapMusic;
+
+    private List<MusicEdge> musicEdges = new  ArrayList();
+    {
+        musicEdges.add(MusicEdge.RAP);
+        musicEdges.add(MusicEdge.CLASSICAL);
+        musicEdges.add(MusicEdge.ROCK);
+    }
+
 
 
     public String getName() {
@@ -40,11 +49,11 @@ public class MusicPlayer {
     }
 
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, RapMusic rapMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
-        this.rapMusic = rapMusic;
+    public MusicPlayer(List<MusicEdge> musicEdges) {
+        this.musicEdges = musicEdges;
     }
+
+
 
     private MusicPlayer(){
 
